@@ -49,6 +49,18 @@ def splitListIntoChunks(text, chunkSize):
     return [text[i : i + chunkSize] for i in range(0, len(text), chunkSize)]
 
 
+def cleanTextIntoLetters(inp: str):
+    """Strips the given text of all punctuation, line breaks and
+       spaces. 
+    """
+    inp = "".join(inp.strip().split()).upper()
+    out = ""
+    for i in inp:
+        if i in "ABCDEFGHIJKLMNOPQRSTUVWXYZ":
+            out += i
+    return out
+    
+
 if __name__ == "__main__":
     text = "abcdefghijklmnopqrstuvwxyz"
 
